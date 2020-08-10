@@ -5,18 +5,20 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path"
+	"text/template"
 
 	"github.com/gorilla/mux"
 )
 
-// var indexTmpl *template.Template
+var indexTmpl *template.Template
 
 var db []byte
 
 func init() {
-	// 	indexTmpl = template.Must(template.ParseFiles(
-	// 		path.Join("views", "index.html"),
-	// 	))
+	indexTmpl = template.Must(template.ParseFiles(
+		path.Join("views", "index.html"),
+	))
 
 	// Read shedule.json db
 	file, _ := os.Open("./schedule.json")
