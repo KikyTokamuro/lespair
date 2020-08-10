@@ -9,17 +9,17 @@ import (
 func getWeek(t time.Time) int {
 	_, week := t.ISOWeek()
 
-	return week - 1
+	return week
 }
 
 func getStarOfWeek(num string) string {
 	i, _ := strconv.Atoi(num)
 
 	if (i % 2) == 0 {
-		return "S1"
+		return "S2"
 	}
 
-	return "S2"
+	return "S1"
 }
 
 func getStarAndDay(day string) (string, string) {
@@ -29,17 +29,17 @@ func getStarAndDay(day string) (string, string) {
 
 	switch day {
 	case "yesterday":
-		d := getStarOfWeek(yesterday.Weekday().String())
+		d := getStarOfWeek(string(getWeek(yesterday)))
 		w := strings.ToLower(yesterday.Weekday().String())
 		return d, w
 
 	case "today":
-		d := getStarOfWeek(today.Weekday().String())
+		d := getStarOfWeek(string(getWeek(yesterday)))
 		w := strings.ToLower(today.Weekday().String())
 		return d, w
 
 	case "tomorrow":
-		d := getStarOfWeek(tomorrow.Weekday().String())
+		d := getStarOfWeek(string(getWeek(yesterday)))
 		w := strings.ToLower(tomorrow.Weekday().String())
 		return d, w
 
