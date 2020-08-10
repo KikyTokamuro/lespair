@@ -16,7 +16,16 @@ var indexTmpl *template.Template
 var db []byte
 
 func init() {
-	indexTmpl = template.Must(template.ParseFiles(
+	//Map of functions for working in templates
+	funcMap := template.FuncMap{
+		// Increment function
+		"inc": func(num int, step int) int {
+			return num + step
+		},
+	}
+
+	// Index template
+	indexTmpl = template.Must(template.New("index.html").Funcs(funcMap).ParseFiles(
 		path.Join("views", "index.html"),
 	))
 
