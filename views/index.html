@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lespair</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+  </head>
+  <body>
+    <div class="container" id="top" role="document">
+      <div class="logo is-center"><img src="./static/img/logo.png" alt="">
+        <h3>Расписание занятий</h3>
+      </div>
+      <fieldset>
+        <legend>
+          <h2>Группа 1</h2>
+        </legend>
+        <div class="row">
+          <div class="col">
+            <div class="card" id="yesterday">
+              <h4>Вчера</h4>
+              {{range $index, $value := .GroupOneYesterday}}
+                {{inc $index 1}}. {{$value}} <br>
+              {{end}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="today">
+              <h4>Сегодня</h4>
+              {{range $index, $value := .GroupOneToday}}
+                {{inc $index 1}}. {{$value}} <br>
+              {{end}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="tomorrow">
+              <h4>Завтра</h4>
+              {{range $index, $value := .GroupOneTomorrow}}
+                {{inc $index 1}}. {{$value}} <br>
+              {{end}}
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>Группа 2</h2>
+        </legend>
+        <div class="row">
+          <div class="col">
+            <div class="card" id="yesterday">
+              <h4>Вчера</h4>
+              {{range $index, $value := .GroupTwoYesterday}}
+                {{inc $index 1}}. {{$value}} <br>
+              {{end}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="today">
+              <h4>Сегодня</h4>
+              {{range $index, $value := .GroupTwoToday}}
+                {{inc $index 1}}. {{$value}} <br>
+              {{end}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="tomorrow">
+              <h4>Завтра</h4>
+              {{range $index, $value := .GroupTwoTomorrow}}
+                {{inc $index 1}}. {{$value}} <br>
+              {{end}}
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h2>Новости</h2>
+        </legend>
+        <div class="row">
+          <div class="col" id="news">Идет загрузка ...</div>
+        </div>
+      </fieldset>
+    </div>
+  </body>
+  <footer class="is-text-center" style="padding: 5rem">
+    <p>Lespair - is an electronic timetable for the specialty 09.03.01, from<a href="http://www.polytech21.ru/"> polytech21.com</a></p>
+    <h5>Made by<a href="https://github.com/KikyTokamuro" target="_blank"> Kiky Tokamuro</a></h5>
+  </footer>
+  <script src="./static/js/rss-parser.min.js"></script>
+  <script src="./static/js/script.js"></script>
+  <link rel="stylesheet" href="./static/css/style.css">
+</html>
