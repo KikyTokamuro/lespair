@@ -1,12 +1,3 @@
-const options = {
-  buttonColorLight: '#14854f',
-  label: '🌓',
-  autoMatchOsTheme: true
-}
-
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
-
 const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
 let parser = new RSSParser();
 let news = document.getElementById("news");
