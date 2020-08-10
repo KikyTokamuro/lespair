@@ -1,27 +1,33 @@
+:root {
+  --bg-color: #ffffff;
+  --bg-secondary-color: #ffffff;
+  --color-primary: #14854F;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #747681;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 1.6rem;
+  --font-color: #222222;
+  --font-family-sans: sans-serif;
+  --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+
 #today {
-  box-shadow: 0 1px 3px rgba(0,255,0,0.6)
+  box-shadow: 0 1px 5px #02b045
 }
 
 #yesterday {
-  box-shadow: 0 1px 3px rgba(255,0,0,0.6)
+  box-shadow: 0 1px 5px #F04155
 }
 
 #tomorrow {
-  box-shadow: 0 1px 3px rgba(0,0,255,0.6)
+  box-shadow: 0 1px 5px #0248b0
 }
 
 .logo {
   flex: 1;
   flex-direction: column;
-}
-
-.darkmode-toggle {
-  color: #fff;
-  width: 3rem;
-  height: 5rem;
-  border-radius: 10%;
-}
-
-button:hover {
-  opacity: unset;
 }
