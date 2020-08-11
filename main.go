@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -32,7 +33,15 @@ func init() {
 	// Read shedule.json db
 	file, _ := os.Open("./schedule.json")
 	db, _ = ioutil.ReadAll(file)
+	file.Close()
+}
 
+// Get env
+func getEnv(key, fallback string) string {
+	if value, ok := os.LookupEnv(key); ok {
+		return value
+	}
+	return fallback
 }
 
 func main() {
@@ -57,7 +66,7 @@ func main() {
 	http.Handle("/", r)
 
 	// Run
-	if err := http.ListenAndServe(":3000", nil); err != nil {
+	if err := http.ListenAndServe(fmt.Sprintf(":%s", getEnv("PORT", "3000")), nil); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
 }
